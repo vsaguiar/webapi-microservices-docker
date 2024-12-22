@@ -15,7 +15,7 @@ public interface IProductRepository
     /// </summary>
     /// <param name="id">O identificador único do produto.</param>
     /// <returns>O produto correspondente ao identificador fornecido.</returns>
-    Task<Product> GetProductAsync(string id);
+    Task<Product> GetProductByIdAsync(string id);
 
     /// <summary>
     /// Obtém os produtos cujo nome corresponde ao termo fornecido de forma assíncrona.
@@ -49,5 +49,5 @@ public interface IProductRepository
     /// </summary>
     /// <param name="id">O identificador único do produto a ser excluído.</param>
     /// <returns>True se a exclusão for bem-sucedida; caso contrário, False.</returns>
-    Task<bool> DeleteProductAsync(string id);
+    Task<bool> DeleteProductByIdAsync(string id);
 }

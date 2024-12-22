@@ -19,7 +19,7 @@ public class ProductRepository : IProductRepository
                              .ToListAsync();
     }
 
-    public async Task<Product> GetProductAsync(string id)
+    public async Task<Product> GetProductByIdAsync(string id)
     {
         return await _context.Products
                              .Find(p => p.Id == id)
@@ -60,7 +60,7 @@ public class ProductRepository : IProductRepository
         return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
     }
 
-    public async Task<bool> DeleteProductAsync(string id)
+    public async Task<bool> DeleteProductByIdAsync(string id)
     {
         FilterDefinition<Product> filter = Builders<Product>.Filter
                                                             .Eq(p => p.Id, id);
